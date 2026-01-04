@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
-import LanguageSelector from "./LanguageSelector";
 
 const solutions = [
   {
@@ -48,24 +48,20 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-sm" : "bg-transparent"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
     >
       <div className="container">
         <nav className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <span className={`text-2xl font-bold tracking-tight transition-colors duration-300 ${
-              isScrolled ? "text-[var(--primary-blue)]" : "text-white"
-            }`}>
-              BOFA
-            </span>
-            <span className={`hidden sm:block ml-2 text-xs uppercase tracking-wider transition-colors duration-300 ${
-              isScrolled ? "text-[var(--gray-400)]" : "text-white/70"
-            }`}>
-              Breath of Fresh Aire
-            </span>
+            <Image
+              src="/logo.png"
+              alt="BOFA - Breath of Fresh Aire"
+              width={200}
+              height={60}
+              className="h-14 w-auto"
+              priority
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -76,11 +72,7 @@ export default function Header() {
               onMouseEnter={() => setIsSolutionsOpen(true)}
               onMouseLeave={() => setIsSolutionsOpen(false)}
             >
-              <button className={`flex items-center gap-1 transition-colors font-medium ${
-                isScrolled
-                  ? "text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
-                  : "text-white/90 hover:text-white"
-              }`}>
+              <button className="flex items-center gap-1 transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]">
                 Solutions
                 <svg
                   className={`w-4 h-4 transition-transform ${
@@ -139,38 +131,25 @@ export default function Header() {
 
             <Link
               href="/sectors"
-              className={`transition-colors font-medium ${
-                isScrolled
-                  ? "text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
-                  : "text-white/90 hover:text-white"
-              }`}
+              className="transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
             >
               Sectors
             </Link>
             <Link
               href="/projects"
-              className={`transition-colors font-medium ${
-                isScrolled
-                  ? "text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
-                  : "text-white/90 hover:text-white"
-              }`}
+              className="transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
             >
               Projects
             </Link>
             <Link
               href="/about"
-              className={`transition-colors font-medium ${
-                isScrolled
-                  ? "text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
-                  : "text-white/90 hover:text-white"
-              }`}
+              className="transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
             >
               About
             </Link>
-            <Link href="/contact" className={`btn ${isScrolled ? "btn-primary" : "btn-white"}`}>
+            <Link href="/contact" className="btn btn-primary">
               Contact Us
             </Link>
-            <LanguageSelector isScrolled={isScrolled} />
           </div>
 
           {/* Mobile Menu Button */}
@@ -180,7 +159,7 @@ export default function Header() {
             aria-label="Toggle menu"
           >
             <svg
-              className={`w-6 h-6 transition-colors ${isScrolled ? "text-[var(--gray-600)]" : "text-white"}`}
+              className="w-6 h-6 text-[var(--gray-600)]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

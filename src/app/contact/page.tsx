@@ -19,15 +19,44 @@ function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const [error, setError] = useState("");
+
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError("");
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "YOUR_WEB3FORMS_ACCESS_KEY", // Get from https://web3forms.com
+          subject: `New ${formData.inquiryType === 'rfp' ? 'RFP Request' : 'Contact Form'} from ${formData.name}`,
+          from_name: "BOFA Website",
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone || "Not provided",
+          organization: formData.organization || "Not provided",
+          inquiry_type: formData.inquiryType,
+          message: formData.projectDetails,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setIsSubmitted(true);
+      } else {
+        setError("Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Failed to send message. Please try again later.");
+    }
 
     setIsSubmitting(false);
-    setIsSubmitted(true);
   };
 
   if (isSubmitted) {
@@ -159,6 +188,12 @@ function ContactForm() {
         />
       </div>
 
+      {error && (
+        <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+          {error}
+        </div>
+      )}
+
       <button
         type="submit"
         disabled={isSubmitting}
@@ -241,7 +276,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <p className="text-sm text-[var(--gray-400)] mb-1">Phone</p>
-                    <p className="text-[var(--gray-900)]">[Phone Placeholder]</p>
+                    <a
+                      href="tel:+1-800-555-0123"
+                      className="text-[var(--gray-900)] hover:text-[var(--primary-blue)] transition-colors"
+                    >
+                      (800) 555-0123
+                    </a>
                   </div>
                   <div>
                     <p className="text-sm text-[var(--gray-400)] mb-1">
