@@ -111,7 +111,7 @@ export default function TermsPage() {
                 info@bofaire.com
               </a>
               <br />
-              <strong>Phone:</strong> (800) 555-0123
+              <strong>Phone:</strong> (212) 202-0699
             </p>
           </div>
         </div>

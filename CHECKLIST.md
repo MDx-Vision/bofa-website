@@ -8,10 +8,7 @@
 - [ ] Test form submission
 
 ### Business Information
-- [ ] Replace phone number `(800) 555-0123` with real number
-  - Location: `src/app/contact/page.tsx`
-  - Location: `src/app/privacy/page.tsx`
-  - Location: `src/app/terms/page.tsx`
+- [x] Replace phone number — updated to (212) 202-0699 across all pages
 
 ---
 

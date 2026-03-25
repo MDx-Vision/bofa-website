@@ -50,7 +50,7 @@ src/
 - **Company:** BOFA - Breath of Fresh Aire
 - **Website:** www.bofaire.com
 - **Email:** info@bofaire.com
-- **Phone:** (800) 555-0123 (PLACEHOLDER - needs real number)
+- **Phone:** (212) 202-0699
 - **Address:** 600 W 161st Street, Ste 4E, New York, NY 10032
 
 ## Development

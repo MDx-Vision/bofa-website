@@ -752,7 +752,7 @@ th{background:#f4f7fa;text-align:left;font-weight:600}
 @media print{body{padding:20px}button{display:none!important}}
 </style></head><body>
 <div class="header">
-<div><h1>BOFA — Breath of Fresh Aire</h1><div class="company">1185 Avenue of the Americas, 3rd Floor, New York, NY 10036<br/>info@bofaire.com | (800) 555-0123</div></div>
+<div><h1>BOFA — Breath of Fresh Aire</h1><div class="company">1185 Avenue of the Americas, 3rd Floor, New York, NY 10036<br/>info@bofaire.com | (212) 202-0699</div></div>
 <div style="text-align:right"><strong>BID PROPOSAL</strong><br/>${data.bidNumber ? `Bid #: ${data.bidNumber}<br/>` : ""}Date: ${new Date().toLocaleDateString()}</div>
 </div>
 

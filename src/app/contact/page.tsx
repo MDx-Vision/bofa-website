@@ -277,10 +277,10 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm text-[var(--gray-400)] mb-1">Phone</p>
                     <a
-                      href="tel:+1-800-555-0123"
+                      href="tel:+1-212-202-0699"
                       className="text-[var(--gray-900)] hover:text-[var(--primary-blue)] transition-colors"
                     >
-                      (800) 555-0123
+                      (212) 202-0699
                     </a>
                   </div>
                   <div>
