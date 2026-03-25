@@ -147,6 +147,18 @@ export default function Header() {
             >
               About
             </Link>
+            <Link
+              href="/bid"
+              className="transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
+            >
+              Bid Builder
+            </Link>
+            <Link
+              href="/request-bid"
+              className="transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
+            >
+              Request a Bid
+            </Link>
             <Link href="/contact" className="btn btn-primary">
               Contact Us
             </Link>
@@ -237,6 +249,20 @@ export default function Header() {
               onClick={() => setIsMobileMenuOpen(false)}
             >
               About
+            </Link>
+            <Link
+              href="/bid"
+              className="block text-[var(--gray-600)] hover:text-[var(--primary-blue)] font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Bid Builder
+            </Link>
+            <Link
+              href="/request-bid"
+              className="block text-[var(--gray-600)] hover:text-[var(--primary-blue)] font-medium"
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              Request a Bid
             </Link>
             <Link
               href="/contact"
