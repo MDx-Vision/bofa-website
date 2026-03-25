@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BOFA — Bid Proposal Form</title>
+<style>
+  :root {
+    --blue: #1B4B82;
+    --blue-light: #3B7DC4;
+    --gray-50: #F9FAFB;
+    --gray-100: #F1F5F9;
+    --gray-200: #E2E8F0;
+    --gray-400: #94A3B8;
+    --gray-600: #475569;
+    --gray-900: #0F172A;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--gray-900);
+    background: #fff;
+    line-height: 1.5;
+    font-size: 14px;
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 40px 30px;
+  }
+
+  /* Header */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 3px solid var(--blue);
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+  }
+  .header .logo-area { display: flex; align-items: flex-start; gap: 14px; }
+  .header .logo-area img { height: 50px; width: auto; }
+  .header h1 { font-size: 22px; color: var(--blue); margin-bottom: 2px; }
+  .header .subtitle { font-size: 11px; color: var(--gray-600); }
+  .header .company-info { font-size: 11px; color: var(--gray-600); text-align: right; line-height: 1.6; }
+  .header .doc-type { font-size: 16px; font-weight: 700; color: var(--blue); text-align: right; }
+
+  /* Sections */
+  .section { margin-bottom: 20px; page-break-inside: avoid; }
+  .section-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+    background: var(--blue);
+    padding: 5px 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  /* Form fields */
+  .row { display: flex; gap: 12px; margin-bottom: 8px; }
+  .field { flex: 1; }
+  .field-2x { flex: 2; }
+  .field-3x { flex: 3; }
+  .field label {
+    display: block;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--gray-600);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 2px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    border: 1px solid var(--gray-200);
+    border-radius: 3px;
+    padding: 6px 8px;
+    font-size: 13px;
+    font-family: inherit;
+    color: var(--gray-900);
+    background: #fff;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--blue-light);
+    box-shadow: 0 0 0 2px rgba(59,125,196,0.15);
+  }
+  .field textarea { resize: vertical; min-height: 60px; }
+  .field input[type="checkbox"] { width: auto; margin-right: 4px; }
+
+  /* Line items table */
+  table { width: 100%; border-collapse: collapse; margin: 8px 0; font-size: 13px; }
+  th { background: var(--gray-50); font-size: 10px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--gray-600); font-weight: 600; text-align: left; padding: 6px 8px; border: 1px solid var(--gray-200); }
+  td { padding: 4px 6px; border: 1px solid var(--gray-200); vertical-align: top; }
+  td input { border: none; width: 100%; padding: 2px 4px; font-size: 13px; font-family: inherit; }
+  td input:focus { outline: none; background: #f0f6ff; }
+  .text-right { text-align: right; }
+  .text-center { text-align: center; }
+  .total-row { background: var(--gray-50); font-weight: 700; }
+  .grand-total { background: var(--blue); color: #fff; font-weight: 700; font-size: 15px; }
+  .grand-total td { padding: 8px; border-color: var(--blue); }
+
+  /* Checkboxes inline */
+  .checkbox-grid { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 4px; }
+  .checkbox-grid label { font-size: 12px; font-weight: 400; color: var(--gray-900); text-transform: none; letter-spacing: 0; display: flex; align-items: center; gap: 4px; }
+
+  /* Signature area */
+  .sig-block { display: flex; gap: 40px; margin-top: 30px; }
+  .sig-line { flex: 1; border-top: 1px solid var(--gray-900); padding-top: 4px; font-size: 11px; color: var(--gray-600); margin-top: 50px; }
+
+  /* Utility */
+  .note { font-size: 11px; color: var(--gray-400); font-style: italic; margin-top: 4px; }
+  .spacer { height: 12px; }
+
+  /* Print */
+  @media print {
+    body { padding: 20px; font-size: 12px; }
+    .no-print { display: none !important; }
+    .field input, .field select, .field textarea { border-color: #ccc; box-shadow: none; }
+    .section { page-break-inside: avoid; }
+    td input { background: transparent; }
+  }
+
+  /* Print button */
+  .print-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--blue);
+    padding: 12px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    z-index: 100;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.15);
+  }
+  .print-bar button {
+    background: #fff;
+    color: var(--blue);
+    border: none;
+    padding: 8px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .print-bar button:hover { background: #f0f6ff; }
+  .print-bar span { color: rgba(255,255,255,0.8); font-size: 13px; }
+
+  /* Bottom padding for fixed bar */
+  .bottom-spacer { height: 70px; }
+</style>
+</head>
+<body>
+
+<!-- Print bar -->
+<div class="print-bar no-print">
+  <span>Fill out this form, then:</span>
+  <button onclick="window.print()">⎙ Print / Save as PDF</button>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="logo-area">
+    <img src="logo.png" alt="BOFA">
+    <div>
+      <h1>BOFA — Breath of Fresh Aire</h1>
+      <div class="subtitle">Environmental Remediation &amp; General Contracting</div>
+      <div class="subtitle">1185 Avenue of the Americas, 3rd Floor, New York, NY 10036</div>
+      <div class="subtitle">info@bofaire.com | (800) 555-0123</div>
+    </div>
+  </div>
+  <div>
+    <div class="doc-type">BID PROPOSAL</div>
+    <div class="company-info">
+      Date: <input type="date" style="border:none; border-bottom:1px solid var(--gray-200); font-size:12px; padding:2px; width:120px;">
+    </div>
+  </div>
+</div>
+
+<!-- 1. PROJECT INFORMATION -->
+<div class="section">
+  <div class="section-title">1. Project Information</div>
+  <div class="row">
+    <div class="field field-2x"><label>Project Name</label><input type="text"></div>
+    <div class="field"><label>Bid / RFP Number</label><input type="text"></div>
+  </div>
+  <div class="row">
+    <div class="field field-2x"><label>Project Address</label><input type="text"></div>
+    <div class="field"><label>City</label><input type="text"></div>
+    <div class="field" style="flex:0.5"><label>State</label><input type="text" value="NY"></div>
+    <div class="field" style="flex:0.5"><label>ZIP</label><input type="text"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>Client / Owner Name</label><input type="text"></div>
+    <div class="field"><label>Contact Person</label><input type="text"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>Client Phone</label><input type="tel"></div>
+    <div class="field"><label>Client Email</label><input type="email"></div>
+    <div class="field"><label>Architect / Engineer</label><input type="text"></div>
+  </div>
+  <div class="row">
+    <div class="field">
+      <label>Contract Type</label>
+      <select>
+        <option>Lump Sum</option>
+        <option>Unit Price</option>
+        <option>Cost Plus</option>
+        <option>GMP</option>
+        <option>Design-Build</option>
+        <option>Time & Materials</option>
+      </select>
+    </div>
+    <div class="field field-2x"><label>Addenda Acknowledged</label><input type="text" placeholder="e.g. Addendum #1 (03/10/2026), Addendum #2 (03/15/2026)"></div>
+  </div>
+</div>
+
+<!-- 2. SCOPE OF WORK -->
+<div class="section">
+  <div class="section-title">2. Scope of Work</div>
+  <div class="field"><label>Description of Work</label><textarea rows="5" placeholder="Describe the complete scope of work to be performed..."></textarea></div>
+  <div class="spacer"></div>
+  <div class="field"><label>Inclusions</label><textarea rows="4" placeholder="• Mobilization and site setup&#10;• Negative pressure enclosures&#10;• Abatement of all identified ACM&#10;• Air monitoring&#10;• Waste transportation and disposal&#10;• Final clearance testing"></textarea></div>
+  <div class="spacer"></div>
+  <div class="field"><label>Exclusions</label><textarea rows="4" placeholder="• Materials not identified in survey&#10;• Concealed conditions&#10;• Utility relocations&#10;• Overtime unless authorized&#10;• Third-party testing"></textarea></div>
+  <div class="spacer"></div>
+  <div class="field"><label>Assumptions &amp; Conditions</label><textarea rows="3" placeholder="• Based on plans dated MM/DD/YYYY&#10;• Normal working hours Mon-Fri&#10;• Unobstructed site access&#10;• Owner provides water and electrical"></textarea></div>
+</div>
+
+<!-- 3. COST BREAKDOWN -->
+<div class="section">
+  <div class="section-title">3. Cost Breakdown</div>
+  <table id="costTable">
+    <thead>
+      <tr>
+        <th style="width:30px">#</th>
+        <th>Description</th>
+        <th style="width:60px" class="text-center">Qty</th>
+        <th style="width:50px" class="text-center">Unit</th>
+        <th style="width:100px" class="text-right">Unit Price</th>
+        <th style="width:110px" class="text-right">Total</th>
+      </tr>
+    </thead>
+    <tbody id="lineItems">
+      <tr><td class="text-center">1</td><td><input type="text" placeholder="e.g. Mobilization / Demobilization"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" placeholder="$0.00" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">2</td><td><input type="text" placeholder="e.g. Asbestos abatement - Floors 1-4"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" placeholder="$0.00" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">3</td><td><input type="text" placeholder="e.g. Air monitoring"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" placeholder="$0.00" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">4</td><td><input type="text" placeholder="e.g. Waste transport & disposal"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" placeholder="$0.00" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">5</td><td><input type="text" placeholder="e.g. Final clearance testing"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" placeholder="$0.00" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">6</td><td><input type="text"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">7</td><td><input type="text"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">8</td><td><input type="text"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">9</td><td><input type="text"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+      <tr><td class="text-center">10</td><td><input type="text"></td><td><input type="text" class="text-center" value="1"></td><td><input type="text" class="text-center" value="LS"></td><td><input type="text" class="text-right line-price" oninput="recalc()"></td><td class="text-right line-total">$0.00</td></tr>
+    </tbody>
+    <tfoot>
+      <tr class="total-row"><td colspan="5" class="text-right">Subtotal</td><td class="text-right" id="subtotal">$0.00</td></tr>
+      <tr><td colspan="4" class="text-right">Overhead</td><td class="text-right"><input type="text" id="overheadPct" class="text-right" value="10" style="width:40px" oninput="recalc()">%</td><td class="text-right" id="overheadAmt">$0.00</td></tr>
+      <tr><td colspan="4" class="text-right">Profit</td><td class="text-right"><input type="text" id="profitPct" class="text-right" value="10" style="width:40px" oninput="recalc()">%</td><td class="text-right" id="profitAmt">$0.00</td></tr>
+      <tr><td colspan="4" class="text-right">Contingency</td><td class="text-right"><input type="text" id="contingencyPct" class="text-right" value="5" style="width:40px" oninput="recalc()">%</td><td class="text-right" id="contingencyAmt">$0.00</td></tr>
+      <tr><td colspan="5" class="text-right">Bond Premium</td><td class="text-right"><input type="text" id="bondPremium" class="text-right" placeholder="$0.00" oninput="recalc()"></td></tr>
+      <tr class="grand-total"><td colspan="5" class="text-right">TOTAL BID AMOUNT</td><td class="text-right" id="grandTotal">$0.00</td></tr>
+    </tfoot>
+  </table>
+  <p class="note">Total in words: <input type="text" style="border:none; border-bottom:1px solid var(--gray-200); width:80%; font-size:12px; font-style:italic; padding:2px;" placeholder="e.g. One Hundred Fifty Thousand Dollars"></p>
+</div>
+
+<!-- 4. BID ALTERNATES -->
+<div class="section">
+  <div class="section-title">4. Bid Alternates (if applicable)</div>
+  <table>
+    <thead><tr><th style="width:30px">#</th><th>Description</th><th style="width:70px" class="text-center">Add / Deduct</th><th style="width:120px" class="text-right">Amount</th></tr></thead>
+    <tbody>
+      <tr><td class="text-center">1</td><td><input type="text"></td><td><select style="width:100%;border:none;font-size:12px"><option>ADD</option><option>DEDUCT</option></select></td><td><input type="text" class="text-right" placeholder="$0.00"></td></tr>
+      <tr><td class="text-center">2</td><td><input type="text"></td><td><select style="width:100%;border:none;font-size:12px"><option>ADD</option><option>DEDUCT</option></select></td><td><input type="text" class="text-right" placeholder="$0.00"></td></tr>
+      <tr><td class="text-center">3</td><td><input type="text"></td><td><select style="width:100%;border:none;font-size:12px"><option>ADD</option><option>DEDUCT</option></select></td><td><input type="text" class="text-right" placeholder="$0.00"></td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 5. PROJECT SCHEDULE -->
+<div class="section">
+  <div class="section-title">5. Project Schedule</div>
+  <div class="row">
+    <div class="field"><label>Proposed Start Date</label><input type="date"></div>
+    <div class="field"><label>Proposed Completion Date</label><input type="date"></div>
+    <div class="field"><label>Duration (Calendar Days)</label><input type="text" placeholder="e.g. 90"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>Working Hours</label><input type="text" value="Mon-Fri, 7:00 AM - 3:30 PM"></div>
+  </div>
+  <div class="field"><label>Key Milestones</label><textarea rows="5" placeholder="• Notice to Proceed: Day 0&#10;• Mobilization complete: Day 5&#10;• Phase 1 complete: Day 30&#10;• Phase 2 complete: Day 60&#10;• Final clearance: Day 80&#10;• Demobilization: Day 90"></textarea></div>
+</div>
+
+<!-- 6. QUALIFICATIONS -->
+<div class="section">
+  <div class="section-title">6. Qualifications &amp; Experience</div>
+  <div class="field"><label>Key Personnel</label><textarea rows="4" placeholder="• Project Manager: Name (X yrs, certifications)&#10;• Site Superintendent: Name (X yrs, certifications)&#10;• Safety Officer: Name (X yrs, certifications)"></textarea></div>
+  <div class="spacer"></div>
+  <div class="field"><label>Relevant Licenses</label><textarea rows="3" placeholder="• NYC Asbestos Contractor License #XX-XXXX&#10;• NYS DOL Asbestos Handling License&#10;• EPA Lead-Safe Certified Firm&#10;• NYC DOB General Contractor License"></textarea></div>
+  <div class="spacer"></div>
+  <div class="field"><label>Certifications</label><textarea rows="3" placeholder="• MBE/WBE Certified (NYC)&#10;• OSHA 30-Hour Construction&#10;• HAZWOPER 40-Hour (all field staff)"></textarea></div>
+  <div class="row">
+    <div class="field"><label>Experience Modification Rate (EMR)</label><input type="text" placeholder="e.g. 0.85"></div>
+    <div class="field"><label>Safety Record (TRIR)</label><input type="text" placeholder="e.g. 0.0 — zero lost-time incidents"></div>
+  </div>
+</div>
+
+<!-- 7. PAST PROJECT REFERENCES -->
+<div class="section">
+  <div class="section-title">7. Past Project References</div>
+  <div style="margin-bottom:12px">
+    <div class="row">
+      <div class="field field-2x"><label>Project Name</label><input type="text"></div>
+      <div class="field"><label>Client</label><input type="text"></div>
+      <div class="field"><label>Contract Value</label><input type="text"></div>
+    </div>
+    <div class="row">
+      <div class="field field-2x"><label>Description of Work</label><input type="text"></div>
+      <div class="field"><label>Completion Date</label><input type="text"></div>
+      <div class="field"><label>Reference Contact &amp; Phone</label><input type="text"></div>
+    </div>
+  </div>
+  <div style="margin-bottom:12px">
+    <div class="row">
+      <div class="field field-2x"><label>Project Name</label><input type="text"></div>
+      <div class="field"><label>Client</label><input type="text"></div>
+      <div class="field"><label>Contract Value</label><input type="text"></div>
+    </div>
+    <div class="row">
+      <div class="field field-2x"><label>Description of Work</label><input type="text"></div>
+      <div class="field"><label>Completion Date</label><input type="text"></div>
+      <div class="field"><label>Reference Contact &amp; Phone</label><input type="text"></div>
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="field field-2x"><label>Project Name</label><input type="text"></div>
+      <div class="field"><label>Client</label><input type="text"></div>
+      <div class="field"><label>Contract Value</label><input type="text"></div>
+    </div>
+    <div class="row">
+      <div class="field field-2x"><label>Description of Work</label><input type="text"></div>
+      <div class="field"><label>Completion Date</label><input type="text"></div>
+      <div class="field"><label>Reference Contact &amp; Phone</label><input type="text"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 8. INSURANCE & BONDS -->
+<div class="section">
+  <div class="section-title">8. Insurance &amp; Bonds</div>
+  <div class="row">
+    <div class="field"><label>General Liability</label><input type="text" value="$1,000,000 / $2,000,000"></div>
+    <div class="field"><label>Workers Compensation</label><input type="text" value="Statutory"></div>
+    <div class="field"><label>Auto Liability</label><input type="text" value="$1,000,000"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>Umbrella / Excess</label><input type="text" placeholder="$5,000,000"></div>
+    <div class="field"><label>Pollution Liability</label><input type="text" placeholder="$2,000,000"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>Surety Company</label><input type="text"></div>
+    <div class="field"><label>Bonding Capacity</label><input type="text" placeholder="$X single / $X aggregate"></div>
+    <div class="field">
+      <label>Bid Bond</label>
+      <select><option>Not included</option><option>Attached</option><option>Available upon request</option></select>
+    </div>
+  </div>
+</div>
+
+<!-- 9. TERMS -->
+<div class="section">
+  <div class="section-title">9. Terms &amp; Conditions</div>
+  <div class="row">
+    <div class="field"><label>Bid Valid For</label><input type="text" value="60 days"></div>
+    <div class="field"><label>Payment Terms</label><input type="text" value="Net 30"></div>
+    <div class="field"><label>Retainage</label><input type="text" value="10%"></div>
+  </div>
+  <div class="row">
+    <div class="field"><label>Warranty Period</label><input type="text" value="1 year on workmanship"></div>
+    <div class="field">
+      <label>Dispute Resolution</label>
+      <select><option>Mediation</option><option>Binding Arbitration</option><option>Litigation</option><option>Mediation, then Arbitration</option></select>
+    </div>
+  </div>
+  <div class="field"><label>Additional Notes / Conditions</label><textarea rows="3" placeholder="Any additional terms, clarifications, or special conditions..."></textarea></div>
+</div>
+
+<!-- 10. SIGNATURE -->
+<div class="section">
+  <div class="section-title">10. Authorization</div>
+  <p style="font-size:12px; color:var(--gray-600); margin-bottom:8px;">
+    This bid is submitted by the undersigned authorized representative of BOFA — Breath of Fresh Aire, Inc.,
+    1185 Avenue of the Americas, 3rd Floor, New York, NY 10036.
+    The undersigned certifies that this bid is made without collusion and that the information provided is accurate.
+  </p>
+  <div class="sig-block">
+    <div class="sig-line">Signature</div>
+    <div class="sig-line">Printed Name &amp; Title</div>
+    <div class="sig-line">Date</div>
+  </div>
+</div>
+
+<div class="bottom-spacer no-print"></div>
+
+<script>
+function parseDollars(str) {
+  const n = parseFloat((str || '').replace(/[^0-9.]/g, ''));
+  return isNaN(n) ? 0 : n;
+}
+
+function fmt(n) {
+  return '$' + n.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
+function recalc() {
+  const rows = document.querySelectorAll('#lineItems tr');
+  let subtotal = 0;
+  rows.forEach(row => {
+    const inputs = row.querySelectorAll('input');
+    const qty = parseFloat(inputs[1]?.value) || 1;
+    const price = parseDollars(inputs[3]?.value);
+    const lineTotal = qty * price;
+    subtotal += lineTotal;
+    row.querySelector('.line-total').textContent = fmt(lineTotal);
+  });
+
+  const oh = subtotal * (parseFloat(document.getElementById('overheadPct').value) || 0) / 100;
+  const pr = subtotal * (parseFloat(document.getElementById('profitPct').value) || 0) / 100;
+  const ct = subtotal * (parseFloat(document.getElementById('contingencyPct').value) || 0) / 100;
+  const bond = parseDollars(document.getElementById('bondPremium').value);
+
+  document.getElementById('subtotal').textContent = fmt(subtotal);
+  document.getElementById('overheadAmt').textContent = fmt(oh);
+  document.getElementById('profitAmt').textContent = fmt(pr);
+  document.getElementById('contingencyAmt').textContent = fmt(ct);
+  document.getElementById('grandTotal').textContent = fmt(subtotal + oh + pr + ct + bond);
+}
+
+// Also recalc when qty changes
+document.querySelectorAll('#lineItems input').forEach(input => {
+  input.addEventListener('input', recalc);
+});
+</script>
+
+</body>
+</html>
