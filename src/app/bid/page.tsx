@@ -982,7 +982,7 @@ export default function BidPage() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">Bid Builder</p>
-            <h1 className="headline-xl mb-6">Create a Project Bid</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">Create a Project Bid</h1>
             <p className="body-lg">
               Build a professional bid proposal with itemized pricing, scope of work,
               qualifications, and terms. Print or export as PDF when you&apos;re done.

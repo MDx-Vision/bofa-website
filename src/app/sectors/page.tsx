@@ -58,7 +58,7 @@ export default function SectorsPage() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">Sectors</p>
-            <h1 className="headline-xl mb-6">
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">
               Who We Work With
             </h1>
             <p className="body-lg">

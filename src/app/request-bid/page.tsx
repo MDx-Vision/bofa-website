@@ -337,7 +337,7 @@ export default function RequestBidPage() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">Request a Bid</p>
-            <h1 className="headline-xl mb-6">Get a Free Project Estimate</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">Get a Free Project Estimate</h1>
             <p className="body-lg">Complete this form and our estimating team will prepare a comprehensive bid tailored to your needs. Most responses within 1-2 business days.</p>
           </div>
         </div>

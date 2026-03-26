@@ -62,7 +62,7 @@ export default async function SectorPage({ params }: PageProps) {
               </svg>
               All Sectors
             </Link>
-            <h1 className="headline-xl mb-6">{sector.title}</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">{sector.title}</h1>
             <p className="body-lg">{sector.heroDescription}</p>
           </div>
         </div>
@@ -121,7 +121,7 @@ export default async function SectorPage({ params }: PageProps) {
         <div className="container">
           <div className="max-w-4xl">
             <p className="eyebrow mb-3">Available Services</p>
-            <h2 className="headline-md mb-6">
+            <h2 className="headline-md mb-6 text-[var(--gray-900)]">
               Services for {sector.title}
             </h2>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4">
@@ -152,7 +152,7 @@ export default async function SectorPage({ params }: PageProps) {
             </div>
             <div>
               <p className="eyebrow mb-3">Featured Project</p>
-              <h2 className="headline-md mb-4">
+              <h2 className="headline-md mb-4 text-[var(--gray-900)]">
                 Recent {sector.title} Success
               </h2>
               <p className="body-md mb-6">

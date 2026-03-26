@@ -239,7 +239,7 @@ export default function ContactPage() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">Contact</p>
-            <h1 className="headline-xl mb-6">Get a Free Estimate</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">Get a Free Estimate</h1>
             <p className="body-lg">
               Describe your project. We respond within one business day. For emergencies, call (212) 202-0699.
             </p>

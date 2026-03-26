@@ -126,7 +126,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-[var(--dark-navy)] via-[var(--navy)] to-[var(--blueprint)]">
+      <section className="min-h-[70vh] flex items-center pt-28 pb-16 bg-gradient-to-br from-[var(--dark-navy)] via-[var(--navy)] to-[var(--blueprint)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
             <p className="eyebrow-light mb-4">Minority-Owned &bull; EPA-Certified &bull; NYC &amp; Tri-State</p>
@@ -141,11 +141,11 @@ export default function Home() {
               Licensed, insured, and minority-owned. From city buildings to family homes — we make hazardous environments safe.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/solutions" className="btn btn-white">
-                See Our Services
-              </Link>
-              <Link href="/contact" className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]">
+              <Link href="/contact" className="btn btn-white">
                 Get a Free Estimate
+              </Link>
+              <Link href="/solutions" className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]">
+                See Our Services
               </Link>
             </div>
           </div>
@@ -153,7 +153,7 @@ export default function Home() {
       </section>
 
       {/* Authority Metrics Bar */}
-      <section className="section-dark py-16">
+      <section className="section-dark py-16 border-t border-white/10 border-b border-b-white/5">
         <div className="container">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             <div>
@@ -181,14 +181,14 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="eyebrow mb-3">Who We Serve</p>
-            <h2 className="headline-lg mb-4">Built for Your Project</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">Built for Your Project</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {audiences.map((audience) => (
               <div
                 key={audience.title}
-                className="card p-6 border border-[var(--gray-100)]"
+                className="p-6 bg-white rounded-lg border border-[var(--gray-100)]"
               >
                 <div className="text-[var(--primary-blue)] mb-4">
                   {audience.icon}
@@ -210,7 +210,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="eyebrow mb-3">Capabilities</p>
-            <h2 className="headline-lg mb-4">Two Divisions. One Standard.</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">Two Divisions. One Standard.</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -243,7 +243,7 @@ export default function Home() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="eyebrow mb-3">Sectors</p>
-            <h2 className="headline-lg mb-4">Where We Operate</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">Where We Operate</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -280,7 +280,7 @@ export default function Home() {
             </div>
             <div>
               <p className="eyebrow mb-3">Featured Project</p>
-              <h2 className="headline-md mb-4">
+              <h2 className="headline-md mb-4 text-[var(--gray-900)]">
                 Municipal Building Comprehensive Remediation
               </h2>
               <p className="body-md mb-6">

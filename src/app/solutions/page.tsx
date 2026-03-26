@@ -70,7 +70,7 @@ export default function SolutionsPage() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">Our Services</p>
-            <h1 className="headline-xl mb-6">
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">
               Environmental Remediation &amp; General Contracting
             </h1>
             <p className="body-lg">
@@ -85,7 +85,7 @@ export default function SolutionsPage() {
         <div className="container">
           <div className="mb-12">
             <p className="eyebrow mb-3">Environmental Remediation</p>
-            <h2 className="headline-lg mb-4">Hazardous Materials. Handled.</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">Hazardous Materials. Handled.</h2>
             <p className="body-md max-w-3xl">
               Asbestos, lead, mold, and hazardous waste — identified, contained, removed, and documented. EPA-certified crews with zero safety incidents.
             </p>
@@ -118,7 +118,7 @@ export default function SolutionsPage() {
         <div className="container">
           <div className="mb-12">
             <p className="eyebrow mb-3">General Contracting</p>
-            <h2 className="headline-lg mb-4">Build It Right</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">Build It Right</h2>
             <p className="body-md max-w-3xl">
               Construction management, renovation, and demolition — with integrated environmental capability when you need it. One contractor. One contract. No coordination headaches.
             </p>

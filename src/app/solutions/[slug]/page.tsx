@@ -62,7 +62,7 @@ export default async function SolutionPage({ params }: PageProps) {
               </svg>
               All Services
             </Link>
-            <h1 className="headline-xl mb-6">{solution.title}</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">{solution.title}</h1>
             <p className="body-lg">{solution.heroDescription}</p>
           </div>
         </div>
@@ -138,7 +138,7 @@ export default async function SolutionPage({ params }: PageProps) {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">Related Sectors</p>
-            <h2 className="headline-md mb-6">Where We Apply This Expertise</h2>
+            <h2 className="headline-md mb-6 text-[var(--gray-900)]">Where We Apply This Expertise</h2>
             <div className="flex flex-wrap gap-3">
               {solution.sectors.map((sector) => (
                 <span

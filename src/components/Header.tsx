@@ -159,6 +159,12 @@ export default function Header() {
             >
               Request a Bid
             </Link>
+            <a
+              href="tel:+1-212-202-0699"
+              className="text-sm font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)] transition-colors"
+            >
+              (212) 202-0699
+            </a>
             <Link href="/contact" className="btn btn-primary">
               Get a Free Estimate
             </Link>

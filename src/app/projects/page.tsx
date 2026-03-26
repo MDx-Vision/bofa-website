@@ -28,7 +28,7 @@ export default function ProjectsPage() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">Results</p>
-            <h1 className="headline-xl mb-6">Our Track Record</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">Our Track Record</h1>
             <p className="body-lg">
               500+ projects completed. Zero safety incidents. These are some of the projects that show what BOFA delivers — on time, on budget, fully documented.
             </p>

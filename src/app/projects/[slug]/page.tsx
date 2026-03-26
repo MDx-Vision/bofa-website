@@ -78,7 +78,7 @@ export default async function ProjectPage({ params }: PageProps) {
                 {project.year}
               </span>
             </div>
-            <h1 className="headline-xl mb-6">{project.title}</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">{project.title}</h1>
             <p className="body-lg">{project.description}</p>
           </div>
         </div>
@@ -181,7 +181,7 @@ export default async function ProjectPage({ params }: PageProps) {
       {/* Project Gallery Placeholder */}
       <section className="section bg-[var(--off-white)]">
         <div className="container">
-          <h2 className="headline-md mb-8">Project Gallery</h2>
+          <h2 className="headline-md mb-8 text-[var(--gray-900)]">Project Gallery</h2>
           <div className="grid md:grid-cols-3 gap-6">
             {[1, 2, 3].map((i) => (
               <div
@@ -199,7 +199,7 @@ export default async function ProjectPage({ params }: PageProps) {
       {relatedProjects.length > 0 && (
         <section className="section bg-white">
           <div className="container">
-            <h2 className="headline-md mb-8">Related Projects</h2>
+            <h2 className="headline-md mb-8 text-[var(--gray-900)]">Related Projects</h2>
             <div className="grid md:grid-cols-2 gap-8">
               {relatedProjects.map((relatedProject) => (
                 <Link

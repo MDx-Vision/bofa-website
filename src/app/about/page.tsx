@@ -92,7 +92,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-3xl">
             <p className="eyebrow mb-3">About BOFA</p>
-            <h1 className="headline-xl mb-6">Minority-Owned. 13 Years. 500+ Projects.</h1>
+            <h1 className="headline-xl mb-6 text-[var(--gray-900)]">Minority-Owned. 13 Years. 500+ Projects.</h1>
             <p className="body-lg">
               BOFA — Breath of Fresh Aire — is an MWBE-certified environmental remediation and general contracting firm serving New York City and the tri-state area. We bring the same standard of professionalism to a family home as we do to a city contract.
             </p>
@@ -105,7 +105,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="headline-lg mb-6">Our Story</h2>
+              <h2 className="headline-lg mb-6 text-[var(--gray-900)]">Our Story</h2>
               <div className="space-y-4 body-md">
                 <p>
                   BOFA was founded in 2012 because too many families, landlords, and building owners were getting shortchanged by contractors who cut corners on hazardous material removal. We built this company to do it right — every time, for every client.
@@ -130,7 +130,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="eyebrow mb-3">Our Approach</p>
-            <h2 className="headline-lg mb-4">How We Operate</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">How We Operate</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -162,7 +162,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="text-center mb-12">
             <p className="eyebrow mb-3">Leadership</p>
-            <h2 className="headline-lg mb-4">Our Team</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">Our Team</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -189,7 +189,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-4xl">
             <p className="eyebrow mb-3">Certifications &amp; Compliance</p>
-            <h2 className="headline-lg mb-4">Licensed. Certified. Verified.</h2>
+            <h2 className="headline-lg mb-4 text-[var(--gray-900)]">Licensed. Certified. Verified.</h2>
 
             <div className="grid md:grid-cols-2 gap-6">
               {certifications.map((cert) => (
