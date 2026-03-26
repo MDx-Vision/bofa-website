@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lexend, Source_Sans_3 } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-const inter = Inter({
-  variable: "--font-inter",
+const lexend = Lexend({
+  variable: "--font-lexend",
+  subsets: ["latin"],
+  display: "swap",
+});
+
+const sourceSans = Source_Sans_3({
+  variable: "--font-source-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -47,6 +53,9 @@ export const metadata: Metadata = {
     description:
       "MWBE-certified. EPA-certified. Asbestos, lead, mold removal. NYC & tri-state area. Free estimates.",
   },
+  icons: {
+    icon: "/favicon.svg",
+  },
   robots: {
     index: true,
     follow: true,
@@ -60,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} antialiased`}>
+      <body className={`${lexend.variable} ${sourceSans.variable} antialiased`}>
         <Header />
         <main>{children}</main>
         <Footer />

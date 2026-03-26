@@ -48,10 +48,10 @@ export default function Header() {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm"
+      className={`fixed top-0 left-0 right-0 z-50 bg-white transition-shadow duration-200 ${isScrolled ? "shadow-md" : "shadow-sm"}`}
     >
       <div className="container">
-        <nav className="flex items-center justify-between h-20">
+        <nav className="flex items-center justify-between h-20" aria-label="Main navigation">
           {/* Logo */}
           <Link href="/" className="flex items-center">
             <Image
@@ -65,14 +65,19 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-6">
             {/* Solutions Dropdown */}
             <div
               className="relative"
               onMouseEnter={() => setIsSolutionsOpen(true)}
               onMouseLeave={() => setIsSolutionsOpen(false)}
             >
-              <button className="flex items-center gap-1 transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]">
+              <button
+                className="flex items-center gap-1 transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
+                aria-expanded={isSolutionsOpen}
+                aria-haspopup="true"
+                aria-label="Services menu"
+              >
                 Services
                 <svg
                   className={`w-4 h-4 transition-transform ${
@@ -81,6 +86,7 @@ export default function Header() {
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
                   <path
                     strokeLinecap="round"
@@ -98,6 +104,8 @@ export default function Header() {
                     ? "opacity-100 visible"
                     : "opacity-0 invisible"
                 }`}
+                role="menu"
+                aria-label="Services submenu"
               >
                 <div className="bg-white rounded-lg shadow-xl border border-[var(--gray-100)] p-6 min-w-[480px] grid grid-cols-2 gap-8">
                   {solutions.map((section) => (
@@ -105,7 +113,7 @@ export default function Header() {
                       <h3 className="eyebrow mb-3">{section.category}</h3>
                       <ul className="space-y-2">
                         {section.items.map((item) => (
-                          <li key={item.name}>
+                          <li key={item.name} role="menuitem">
                             <Link
                               href={item.href}
                               className="text-[var(--gray-600)] hover:text-[var(--primary-blue)] transition-colors"
@@ -147,21 +155,10 @@ export default function Header() {
             >
               About
             </Link>
-            <Link
-              href="/bid"
-              className="transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
-            >
-              Bid Builder
-            </Link>
-            <Link
-              href="/request-bid"
-              className="transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]"
-            >
-              Request a Bid
-            </Link>
             <a
               href="tel:+1-212-202-0699"
               className="text-sm font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)] transition-colors"
+              aria-label="Call BOFA at (212) 202-0699"
             >
               (212) 202-0699
             </a>
@@ -172,15 +169,17 @@ export default function Header() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             <svg
               className="w-6 h-6 text-[var(--gray-600)]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
+              aria-hidden="true"
             >
               {isMobileMenuOpen ? (
                 <path
@@ -204,11 +203,13 @@ export default function Header() {
 
       {/* Mobile Menu */}
       <div
-        className={`lg:hidden absolute top-full left-0 right-0 bg-white border-t border-[var(--gray-100)] shadow-lg transition-all duration-300 ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-white border-t border-[var(--gray-100)] shadow-lg transition-all duration-300 ${
           isMobileMenuOpen
             ? "opacity-100 visible max-h-screen"
             : "opacity-0 invisible max-h-0"
         } overflow-hidden`}
+        role="menu"
+        aria-label="Mobile navigation"
       >
         <div className="container py-6">
           <div className="space-y-4">
@@ -256,20 +257,13 @@ export default function Header() {
             >
               About
             </Link>
-            <Link
-              href="/bid"
-              className="block text-[var(--gray-600)] hover:text-[var(--primary-blue)] font-medium"
+            <a
+              href="tel:+1-212-202-0699"
+              className="block text-[var(--primary-blue)] font-medium"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Bid Builder
-            </Link>
-            <Link
-              href="/request-bid"
-              className="block text-[var(--gray-600)] hover:text-[var(--primary-blue)] font-medium"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              Request a Bid
-            </Link>
+              Call (212) 202-0699
+            </a>
             <Link
               href="/contact"
               className="btn btn-primary w-full mt-4"

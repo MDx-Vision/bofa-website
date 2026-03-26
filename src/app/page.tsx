@@ -322,8 +322,11 @@ export default function Home() {
                 key={cert.abbr}
                 className="trust-badge"
               >
+                <svg className="w-4 h-4 text-[var(--metric-green)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
                 <span className="font-bold">{cert.abbr}</span>
-                <span className="text-white/60">|</span>
+                <span className="text-white/40">|</span>
                 <span>{cert.name}</span>
               </span>
             ))}
