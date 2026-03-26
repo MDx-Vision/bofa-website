@@ -73,7 +73,7 @@ export default function Header() {
               onMouseLeave={() => setIsSolutionsOpen(false)}
             >
               <button className="flex items-center gap-1 transition-colors font-medium text-[var(--gray-600)] hover:text-[var(--primary-blue)]">
-                Solutions
+                Services
                 <svg
                   className={`w-4 h-4 transition-transform ${
                     isSolutionsOpen ? "rotate-180" : ""
@@ -122,7 +122,7 @@ export default function Header() {
                       href="/solutions"
                       className="text-[var(--primary-blue)] hover:text-[var(--accent-blue)] font-medium"
                     >
-                      View All Solutions →
+                      View All Services →
                     </Link>
                   </div>
                 </div>
@@ -160,7 +160,7 @@ export default function Header() {
               Request a Bid
             </Link>
             <Link href="/contact" className="btn btn-primary">
-              Contact Us
+              Get a Free Estimate
             </Link>
           </div>
 
@@ -207,7 +207,7 @@ export default function Header() {
         <div className="container py-6">
           <div className="space-y-4">
             <div>
-              <p className="eyebrow mb-2">Solutions</p>
+              <p className="eyebrow mb-2">Services</p>
               {solutions.map((section) => (
                 <div key={section.category} className="mb-4">
                   <p className="text-sm font-medium text-[var(--gray-900)] mb-1">
@@ -269,7 +269,7 @@ export default function Header() {
               className="btn btn-primary w-full mt-4"
               onClick={() => setIsMobileMenuOpen(false)}
             >
-              Contact Us
+              Get a Free Estimate
             </Link>
           </div>
         </div>

@@ -36,8 +36,10 @@ export default function Footer() {
               Breath of Fresh Aire
             </p>
             <p className="text-[var(--gray-400)] text-sm leading-relaxed">
-              Comprehensive environmental remediation and construction services
-              for government, commercial, and residential clients nationwide.
+              Minority-Owned. EPA-Certified. Serving NYC &amp; the Tri-State Area.
+            </p>
+            <p className="text-[var(--gray-400)] text-xs mt-2">
+              MWBE Certified &bull; Licensed &amp; Insured &bull; NYC DOB Registered
             </p>
             <div className="mt-6">
               <a
@@ -51,7 +53,7 @@ export default function Footer() {
 
           {/* Solutions Column */}
           <div>
-            <h3 className="font-semibold mb-4">Solutions</h3>
+            <h3 className="font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {footerLinks.solutions.map((link) => (
                 <li key={link.name}>
@@ -109,6 +111,12 @@ export default function Footer() {
                 <span className="text-xs bg-white/10 px-2 py-1 rounded">
                   OSHA Compliant
                 </span>
+                <span className="text-xs bg-white/10 px-2 py-1 rounded">
+                  MWBE Certified
+                </span>
+                <span className="text-xs bg-white/10 px-2 py-1 rounded">
+                  NYC DOB
+                </span>
               </div>
             </div>
           </div>
@@ -118,7 +126,7 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-[var(--gray-400)] text-sm">
-              © 2025 BOFA. All rights reserved.
+              © 2026 BOFA — Breath of Fresh Aire. All rights reserved.
             </p>
             <div className="flex gap-6">
               <Link

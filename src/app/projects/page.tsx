@@ -27,13 +27,10 @@ export default function ProjectsPage() {
       <section className="pt-32 pb-16 bg-gradient-to-b from-[var(--gray-50)] to-white">
         <div className="container">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-3">Our Work</p>
-            <h1 className="headline-xl mb-6">Project Portfolio</h1>
+            <p className="eyebrow mb-3">Results</p>
+            <h1 className="headline-xl mb-6">Our Track Record</h1>
             <p className="body-lg">
-              Explore our project portfolio showcasing environmental remediation
-              and construction work across multiple sectors. Each project
-              demonstrates our commitment to safety, quality, and client
-              satisfaction.
+              500+ projects completed. Zero safety incidents. These are some of the projects that show what BOFA delivers — on time, on budget, fully documented.
             </p>
           </div>
         </div>
@@ -115,15 +112,22 @@ export default function ProjectsPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="headline-md text-white mb-4">
-              Have a Project in Mind?
+              Start Your Project
             </h2>
             <p className="text-lg text-white/80 mb-8">
-              Let&apos;s discuss how we can bring the same level of expertise and
-              professionalism to your project.
+              Free estimates. Licensed and insured. We respond within one business day.
             </p>
-            <Link href="/contact" className="btn btn-white">
-              Start a Conversation
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn btn-white">
+                Get a Free Estimate
+              </Link>
+              <a
+                href="tel:+1-212-202-0699"
+                className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]"
+              >
+                Call (212) 202-0699
+              </a>
+            </div>
           </div>
         </div>
       </section>

@@ -4,8 +4,9 @@ const capabilities = [
   {
     title: "Environmental Remediation",
     description:
-      "Comprehensive hazardous material identification, containment, and removal services that protect health and ensure regulatory compliance across all project types.",
+      "Asbestos. Lead. Mold. Hazardous materials. Identified, contained, removed, and cleared — with full documentation for every project.",
     href: "/solutions/asbestos-abatement",
+    linkText: "See Remediation Services →",
     icon: (
       <svg
         className="w-8 h-8"
@@ -25,8 +26,9 @@ const capabilities = [
   {
     title: "General Contracting",
     description:
-      "Full-service construction management, renovation, and selective demolition capabilities delivered with precision, safety, and transparent communication.",
+      "Construction management, renovation, and selective demolition. On time. On budget. Fully documented from demo through punch list.",
     href: "/solutions/construction-management",
+    linkText: "See Construction Services →",
     icon: (
       <svg
         className="w-8 h-8"
@@ -48,27 +50,27 @@ const capabilities = [
 const sectors = [
   {
     title: "Government & Municipal",
-    description: "Federal, state, and local government facilities and infrastructure",
+    description: "MWBE-certified. Davis-Bacon compliant. We speak procurement.",
     href: "/sectors/government-municipal",
   },
   {
     title: "Healthcare",
-    description: "Hospitals, clinics, and medical facilities requiring sensitive handling",
+    description: "ICRA-trained crews. Zero disruption to patient care.",
     href: "/sectors/healthcare",
   },
   {
     title: "Education",
-    description: "Schools, universities, and educational campus environments",
+    description: "Summer break schedules. Every school ready for September.",
     href: "/sectors/education",
   },
   {
     title: "Commercial & Industrial",
-    description: "Office buildings, manufacturing, and industrial facilities",
+    description: "24-hour mobilization. Minimal business disruption.",
     href: "/sectors/commercial-industrial",
   },
   {
     title: "Residential",
-    description: "Single-family homes, multi-unit housing, and residential communities",
+    description: "Your home. Your family. Our highest priority.",
     href: "/sectors/residential",
   },
 ];
@@ -76,51 +78,139 @@ const sectors = [
 const certifications = [
   { name: "EPA Certified", abbr: "EPA" },
   { name: "OSHA Compliant", abbr: "OSHA" },
-  { name: "State Licensed", abbr: "LIC" },
+  { name: "MWBE Certified", abbr: "MWBE" },
+  { name: "NYC DOB Registered", abbr: "DOB" },
   { name: "Fully Bonded & Insured", abbr: "B&I" },
+];
+
+const audiences = [
+  {
+    title: "Government Agencies",
+    description: "MWBE-certified. Prevailing wage compliant. We know the bid process.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 21h18M3 10h18M3 7l9-4 9 4M4 10v11M20 10v11M8 14v4M12 14v4M16 14v4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Homeowners & Families",
+    description: "Your family's safety is the job. We handle the hazard, you keep the peace of mind.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+      </svg>
+    ),
+  },
+  {
+    title: "Landlords & Property Managers",
+    description: "Compliance documentation. On-time completion. Protect your investment.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
+      </svg>
+    ),
+  },
+  {
+    title: "Real Estate & Investors",
+    description: "Fast turnaround. Certified clearance letters. Close on schedule.",
+    icon: (
+      <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+      </svg>
+    ),
+  },
 ];
 
 export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-[var(--navy)] via-[var(--primary-blue)] to-[var(--blueprint)]">
+      <section className="min-h-screen flex items-center pt-20 bg-gradient-to-br from-[var(--dark-navy)] via-[var(--navy)] to-[var(--blueprint)]">
         <div className="container">
           <div className="max-w-4xl mx-auto text-center">
+            <p className="eyebrow-light mb-4">Minority-Owned &bull; EPA-Certified &bull; NYC &amp; Tri-State</p>
             <h1 className="headline-xl mb-6 text-white">
-              Creating Safe Environments.
+              Asbestos. Lead. Mold.
               <br />
               <span className="text-[var(--light-blue)]">
-                Protecting What Matters.
+                Handled.
               </span>
             </h1>
             <p className="text-lg text-white/80 max-w-2xl mx-auto mb-10">
-              BOFA delivers comprehensive environmental remediation and
-              construction services for government, commercial, and residential
-              clients nationwide.
+              Licensed, insured, and minority-owned. From city buildings to family homes — we make hazardous environments safe.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/solutions" className="btn btn-white">
-                Explore Solutions
+                See Our Services
               </Link>
               <Link href="/contact" className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]">
-                Contact Us
+                Get a Free Estimate
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Capabilities Section */}
+      {/* Authority Metrics Bar */}
+      <section className="section-dark py-16">
+        <div className="container">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div>
+              <div className="stat-number">500+</div>
+              <div className="stat-label">Projects Completed</div>
+            </div>
+            <div>
+              <div className="stat-number text-[var(--metric-green)]">0</div>
+              <div className="stat-label">Safety Incidents</div>
+            </div>
+            <div>
+              <div className="stat-number text-[var(--metric-gold)]">MWBE</div>
+              <div className="stat-label">Certified Minority-Owned</div>
+            </div>
+            <div>
+              <div className="stat-number">13+</div>
+              <div className="stat-label">Years in Business</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Who We Serve */}
       <section className="section bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="eyebrow mb-3">What We Do</p>
-            <h2 className="headline-lg mb-4">Integrated Capabilities</h2>
-            <p className="body-lg max-w-2xl mx-auto">
-              We bring together environmental expertise and construction
-              excellence to deliver complete solutions for complex projects.
-            </p>
+            <p className="eyebrow mb-3">Who We Serve</p>
+            <h2 className="headline-lg mb-4">Built for Your Project</h2>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {audiences.map((audience) => (
+              <div
+                key={audience.title}
+                className="card p-6 border border-[var(--gray-100)]"
+              >
+                <div className="text-[var(--primary-blue)] mb-4">
+                  {audience.icon}
+                </div>
+                <h3 className="text-lg font-semibold mb-2 text-[var(--gray-900)]">
+                  {audience.title}
+                </h3>
+                <p className="text-[var(--gray-600)] text-sm">
+                  {audience.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Capabilities Section */}
+      <section className="section bg-[var(--off-white)]">
+        <div className="container">
+          <div className="text-center mb-12">
+            <p className="eyebrow mb-3">Capabilities</p>
+            <h2 className="headline-lg mb-4">Two Divisions. One Standard.</h2>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
@@ -128,7 +218,7 @@ export default function Home() {
               <Link
                 key={capability.title}
                 href={capability.href}
-                className="card p-8 border border-[var(--gray-100)] group"
+                className="card p-8 border border-[var(--gray-100)] group bg-white"
               >
                 <div className="text-[var(--primary-blue)] mb-4 group-hover:text-[var(--accent-blue)] transition-colors">
                   {capability.icon}
@@ -140,7 +230,7 @@ export default function Home() {
                   {capability.description}
                 </p>
                 <span className="text-[var(--primary-blue)] font-medium group-hover:text-[var(--accent-blue)] transition-colors">
-                  Learn More →
+                  {capability.linkText}
                 </span>
               </Link>
             ))}
@@ -149,16 +239,11 @@ export default function Home() {
       </section>
 
       {/* Sectors Section */}
-      <section className="section bg-[var(--off-white)]">
+      <section className="section bg-white">
         <div className="container">
           <div className="text-center mb-12">
-            <p className="eyebrow mb-3">Sectors We Serve</p>
-            <h2 className="headline-lg mb-4">Expertise Across Industries</h2>
-            <p className="body-lg max-w-2xl mx-auto">
-              From government facilities to residential properties, we bring
-              specialized knowledge and proven capabilities to every sector we
-              serve.
-            </p>
+            <p className="eyebrow mb-3">Sectors</p>
+            <h2 className="headline-lg mb-4">Where We Operate</h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -166,7 +251,7 @@ export default function Home() {
               <Link
                 key={sector.title}
                 href={sector.href}
-                className="card p-6 border border-[var(--gray-100)] group bg-white"
+                className="card p-6 border border-[var(--gray-100)] group"
               >
                 <h3 className="text-lg font-semibold mb-2 text-[var(--gray-900)] group-hover:text-[var(--primary-blue)] transition-colors">
                   {sector.title}
@@ -180,14 +265,14 @@ export default function Home() {
 
           <div className="text-center mt-10">
             <Link href="/sectors" className="btn btn-secondary">
-              View All Sectors
+              See Sector Expertise
             </Link>
           </div>
         </div>
       </section>
 
       {/* Featured Project Section */}
-      <section className="section bg-white">
+      <section className="section bg-[var(--off-white)]">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div className="aspect-video placeholder-image rounded-lg">
@@ -199,19 +284,16 @@ export default function Home() {
                 Municipal Building Comprehensive Remediation
               </h2>
               <p className="body-md mb-6">
-                Complete asbestos abatement and lead paint removal for a
-                historic city hall building, executed while maintaining partial
-                building operations. Our team delivered the project ahead of
-                schedule while exceeding all regulatory requirements.
+                Full asbestos abatement and lead paint removal in a historic city hall — completed 2 weeks ahead of schedule with zero safety incidents. Building remained partially operational throughout.
               </p>
               <div className="flex flex-wrap gap-3 mb-6">
-                <span className="text-xs bg-[var(--gray-100)] px-3 py-1 rounded-full">
+                <span className="text-xs bg-[var(--gray-200)] px-3 py-1 rounded-full font-medium">
                   Government
                 </span>
-                <span className="text-xs bg-[var(--gray-100)] px-3 py-1 rounded-full">
-                  Asbestos Abatement
+                <span className="text-xs bg-[var(--gray-200)] px-3 py-1 rounded-full font-medium">
+                  Asbestos
                 </span>
-                <span className="text-xs bg-[var(--gray-100)] px-3 py-1 rounded-full">
+                <span className="text-xs bg-[var(--gray-200)] px-3 py-1 rounded-full font-medium">
                   Lead Removal
                 </span>
               </div>
@@ -219,7 +301,7 @@ export default function Home() {
                 href="/projects"
                 className="text-[var(--primary-blue)] font-medium hover:text-[var(--accent-blue)] transition-colors"
               >
-                View Project Details →
+                See the Full Case Study →
               </Link>
             </div>
           </div>
@@ -227,38 +309,25 @@ export default function Home() {
       </section>
 
       {/* Trust/Credentials Section */}
-      <section className="section bg-[var(--off-white)]">
+      <section className="section-dark py-16">
         <div className="container">
           <div className="text-center mb-10">
-            <p className="eyebrow mb-3">Certifications & Compliance</p>
-            <h2 className="headline-md mb-4">Trusted Credentials</h2>
-            <p className="body-md max-w-2xl mx-auto">
-              We maintain the highest standards of certification and compliance
-              to protect our clients and deliver exceptional results.
-            </p>
+            <p className="eyebrow-light mb-3">Credentials</p>
+            <h2 className="headline-md text-white mb-4">Licensed. Certified. Minority-Owned.</h2>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 mb-8">
+          <div className="flex flex-wrap justify-center gap-4">
             {certifications.map((cert) => (
-              <div
+              <span
                 key={cert.abbr}
-                className="bg-white rounded-lg px-8 py-6 text-center border border-[var(--gray-100)] min-w-[140px]"
+                className="trust-badge"
               >
-                <div className="w-12 h-12 bg-[var(--primary-blue)]/10 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <span className="text-[var(--primary-blue)] font-bold text-sm">
-                    {cert.abbr}
-                  </span>
-                </div>
-                <p className="text-sm font-medium text-[var(--gray-900)]">
-                  {cert.name}
-                </p>
-              </div>
+                <span className="font-bold">{cert.abbr}</span>
+                <span className="text-white/60">|</span>
+                <span>{cert.name}</span>
+              </span>
             ))}
           </div>
-
-          <p className="text-center text-sm text-[var(--gray-400)]">
-            Licensed and operating in multiple states nationwide
-          </p>
         </div>
       </section>
 
@@ -267,22 +336,21 @@ export default function Home() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="headline-lg text-white mb-4">
-              Ready to Discuss Your Project?
+              Need Hazardous Material Removed?
             </h2>
             <p className="text-lg text-white/80 mb-8">
-              Our team is here to help you navigate environmental challenges
-              with confidence. Let&apos;s start a conversation about your needs.
+              Free estimates. Licensed and insured. We respond within one business day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn btn-white">
-                Get in Touch
+                Get a Free Estimate
               </Link>
-              <Link
-                href="/contact?type=rfp"
+              <a
+                href="tel:+1-212-202-0699"
                 className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]"
               >
-                Request a Proposal
-              </Link>
+                Call (212) 202-0699
+              </a>
             </div>
           </div>
         </div>

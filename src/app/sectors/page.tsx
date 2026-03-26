@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { sectorsData } from "@/lib/sectors-data";
 
 export const metadata: Metadata = {
   title: "Sectors",
   description:
-    "BOFA serves government, healthcare, education, commercial, industrial, and residential sectors with specialized environmental and construction services.",
+    "BOFA serves government, healthcare, education, commercial, industrial, and residential sectors. MWBE-certified environmental remediation and construction.",
 };
 
 const sectors = [
@@ -13,36 +12,41 @@ const sectors = [
     slug: "government-municipal",
     title: "Government & Municipal",
     description:
-      "Federal, state, and local government facilities and infrastructure requiring regulatory compliance and transparent project delivery.",
+      "MWBE-certified. Davis-Bacon compliant. We know the bid process.",
     image: "[PLACEHOLDER: Government building]",
+    linkText: "See Government Work →",
   },
   {
     slug: "healthcare",
     title: "Healthcare Facilities",
     description:
-      "Hospitals, clinics, and medical facilities where infection control and patient safety are paramount.",
+      "ICRA-trained crews. Zero disruption to patient care.",
     image: "[PLACEHOLDER: Healthcare facility]",
+    linkText: "See Healthcare Work →",
   },
   {
     slug: "education",
     title: "Educational Institutions",
     description:
-      "Schools, colleges, and universities requiring work scheduled around academic calendars and student safety.",
+      "Summer break schedules. Every school ready for September.",
     image: "[PLACEHOLDER: School building]",
+    linkText: "See Education Work →",
   },
   {
     slug: "commercial-industrial",
     title: "Commercial & Industrial",
     description:
-      "Office buildings, manufacturing plants, and industrial facilities needing efficient, minimally disruptive services.",
+      "24-hour mobilization. Minimal business disruption.",
     image: "[PLACEHOLDER: Commercial building]",
+    linkText: "See Commercial Work →",
   },
   {
     slug: "residential",
     title: "Residential",
     description:
-      "Single-family homes, apartments, and residential communities requiring respectful, professional service.",
+      "Your home. Your family. Our highest priority.",
     image: "[PLACEHOLDER: Residential property]",
+    linkText: "See Residential Work →",
   },
 ];
 
@@ -53,14 +57,12 @@ export default function SectorsPage() {
       <section className="pt-32 pb-16 bg-gradient-to-b from-[var(--gray-50)] to-white">
         <div className="container">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-3">Sectors We Serve</p>
+            <p className="eyebrow mb-3">Sectors</p>
             <h1 className="headline-xl mb-6">
-              Expertise Across Industries
+              Who We Work With
             </h1>
             <p className="body-lg">
-              We bring specialized knowledge and proven capabilities to every
-              sector we serve. Our experience spans public and private, large
-              and small, from government facilities to residential homes.
+              Government agencies, hospitals, schools, commercial buildings, and family homes. Same standard of professionalism across every project.
             </p>
           </div>
         </div>
@@ -87,7 +89,7 @@ export default function SectorsPage() {
                     {sector.description}
                   </p>
                   <span className="text-[var(--primary-blue)] font-medium group-hover:text-[var(--accent-blue)] transition-colors">
-                    Learn More →
+                    {sector.linkText}
                   </span>
                 </div>
               </Link>
@@ -101,15 +103,22 @@ export default function SectorsPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="headline-md text-white mb-4">
-              Not Sure Where to Start?
+              Tell Us About Your Project
             </h2>
             <p className="text-lg text-white/80 mb-8">
-              Our team can help you understand how our services apply to your
-              specific situation and requirements.
+              Free estimates. No obligation. We respond within one business day.
             </p>
-            <Link href="/contact" className="btn btn-white">
-              Contact Our Team
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn btn-white">
+                Get a Free Estimate
+              </Link>
+              <a
+                href="tel:+1-212-202-0699"
+                className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]"
+              >
+                Call (212) 202-0699
+              </a>
+            </div>
           </div>
         </div>
       </section>

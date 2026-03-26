@@ -168,6 +168,7 @@ function ContactForm() {
           <option value="general">General Inquiry</option>
           <option value="rfp">Request for Proposal</option>
           <option value="consultation">Project Consultation</option>
+          <option value="emergency">Emergency Response</option>
           <option value="other">Other</option>
         </select>
       </div>
@@ -180,7 +181,7 @@ function ContactForm() {
           id="projectDetails"
           rows={5}
           className="form-input"
-          placeholder="Please tell us about your project or inquiry..."
+          placeholder="Project type, location, timeline, and scope..."
           value={formData.projectDetails}
           onChange={(e) =>
             setFormData({ ...formData, projectDetails: e.target.value })
@@ -223,7 +224,7 @@ function ContactForm() {
             Sending...
           </>
         ) : (
-          "Send Message"
+          "Request Estimate"
         )}
       </button>
     </form>
@@ -237,11 +238,10 @@ export default function ContactPage() {
       <section className="pt-32 pb-16 bg-gradient-to-b from-[var(--gray-50)] to-white">
         <div className="container">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-3">Contact Us</p>
-            <h1 className="headline-xl mb-6">Let&apos;s Start a Conversation</h1>
+            <p className="eyebrow mb-3">Contact</p>
+            <h1 className="headline-xl mb-6">Get a Free Estimate</h1>
             <p className="body-lg">
-              Whether you have a question about our services, need a proposal,
-              or want to discuss a project, our team is ready to help.
+              Describe your project. We respond within one business day. For emergencies, call (212) 202-0699.
             </p>
           </div>
         </div>
@@ -288,7 +288,10 @@ export default function ContactPage() {
                       Service Area
                     </p>
                     <p className="text-[var(--gray-900)]">
-                      Serving clients nationwide
+                      NYC &amp; Tri-State Area
+                    </p>
+                    <p className="text-xs text-[var(--gray-400)] mt-1">
+                      MWBE Certified &bull; Licensed &amp; Insured
                     </p>
                   </div>
                 </div>
@@ -296,15 +299,13 @@ export default function ContactPage() {
 
               <div className="bg-[var(--primary-blue)]/5 border border-[var(--primary-blue)]/10 rounded-lg p-6">
                 <h3 className="font-semibold text-[var(--gray-900)] mb-2">
-                  Need a Proposal?
+                  Response Time
                 </h3>
                 <p className="text-sm text-[var(--gray-600)] mb-4">
-                  Select &quot;Request for Proposal&quot; from the inquiry type and
-                  include project details. We&apos;ll respond with a customized
-                  proposal within 2-3 business days.
+                  Estimates within 1 business day. Proposals within 2-3 business days. Free. No obligation.
                 </p>
                 <p className="text-xs text-[var(--gray-400)]">
-                  For urgent matters, please call our office directly.
+                  Urgent? Call (212) 202-0699 directly.
                 </p>
               </div>
             </div>

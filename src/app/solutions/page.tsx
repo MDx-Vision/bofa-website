@@ -2,35 +2,39 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Solutions",
+  title: "Services",
   description:
-    "Comprehensive environmental remediation and general contracting solutions. From asbestos abatement to construction management.",
+    "Environmental remediation and general contracting services. Asbestos abatement, lead removal, mold remediation, construction management, renovation, and demolition.",
 };
 
 const environmentalServices = [
   {
     title: "Asbestos Abatement",
     description:
-      "Safe identification, containment, and removal of asbestos-containing materials in compliance with all federal and state regulations.",
+      "Contained. Removed. Cleared. 100% first-pass clearance rate across 200+ projects.",
     href: "/solutions/asbestos-abatement",
+    linkText: "Learn About Asbestos Services →",
   },
   {
     title: "Lead Paint Removal",
     description:
-      "Professional lead-based paint assessment and abatement services for residential, commercial, and industrial properties.",
+      "EPA RRP-certified. Protecting families and tenants from lead exposure in pre-1978 buildings.",
     href: "/solutions/lead-paint-removal",
+    linkText: "Learn About Lead Removal →",
   },
   {
     title: "Mold Remediation",
     description:
-      "Comprehensive mold assessment, containment, and remediation to restore healthy indoor environments.",
+      "Find it. Contain it. Remove it. Fix the moisture source so it doesn't come back.",
     href: "/solutions/mold-remediation",
+    linkText: "Learn About Mold Services →",
   },
   {
     title: "Hazardous Material Management",
     description:
-      "Complete hazardous waste handling, disposal, and site remediation services meeting all environmental standards.",
+      "Identification through disposal. Full chain-of-custody. Every regulation met.",
     href: "/solutions/hazardous-material-management",
+    linkText: "Learn About Hazmat Services →",
   },
 ];
 
@@ -38,20 +42,23 @@ const contractingServices = [
   {
     title: "Construction Management",
     description:
-      "Full-service construction oversight from pre-construction planning through project completion and closeout.",
+      "Planning through punch list. On time. On budget. Fully documented.",
     href: "/solutions/construction-management",
+    linkText: "Learn About Construction →",
   },
   {
     title: "Renovation & Restoration",
     description:
-      "Building renovation and restoration services that preserve architectural integrity while modernizing facilities.",
+      "Modernize the building. Preserve the character. Handle the hazmat if it's there.",
     href: "/solutions/renovation-restoration",
+    linkText: "Learn About Renovation →",
   },
   {
     title: "Selective Demolition",
     description:
-      "Precision demolition services that remove targeted elements while protecting surrounding structures and systems.",
+      "Surgical precision. Remove what needs to go. Protect everything else.",
     href: "/solutions/selective-demolition",
+    linkText: "Learn About Demolition →",
   },
 ];
 
@@ -62,15 +69,12 @@ export default function SolutionsPage() {
       <section className="pt-32 pb-16 bg-gradient-to-b from-[var(--gray-50)] to-white">
         <div className="container">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-3">Our Solutions</p>
+            <p className="eyebrow mb-3">Our Services</p>
             <h1 className="headline-xl mb-6">
-              Comprehensive Environmental & Construction Solutions
+              Environmental Remediation &amp; General Contracting
             </h1>
             <p className="body-lg">
-              We integrate environmental remediation expertise with construction
-              capabilities to deliver complete solutions for complex projects.
-              Our approach ensures compliance, safety, and quality at every
-              phase.
+              Two divisions. One standard. From hazardous material removal to full-scale construction — licensed, insured, and minority-owned.
             </p>
           </div>
         </div>
@@ -81,12 +85,9 @@ export default function SolutionsPage() {
         <div className="container">
           <div className="mb-12">
             <p className="eyebrow mb-3">Environmental Remediation</p>
-            <h2 className="headline-lg mb-4">Protecting Health & Safety</h2>
+            <h2 className="headline-lg mb-4">Hazardous Materials. Handled.</h2>
             <p className="body-md max-w-3xl">
-              Our environmental remediation services address hazardous materials
-              with precision and care. We maintain strict compliance with EPA,
-              OSHA, and state regulations while minimizing disruption to your
-              operations.
+              Asbestos, lead, mold, and hazardous waste — identified, contained, removed, and documented. EPA-certified crews with zero safety incidents.
             </p>
           </div>
 
@@ -104,7 +105,7 @@ export default function SolutionsPage() {
                   {service.description}
                 </p>
                 <span className="text-[var(--primary-blue)] font-medium group-hover:text-[var(--accent-blue)] transition-colors">
-                  Learn More →
+                  {service.linkText}
                 </span>
               </Link>
             ))}
@@ -117,12 +118,9 @@ export default function SolutionsPage() {
         <div className="container">
           <div className="mb-12">
             <p className="eyebrow mb-3">General Contracting</p>
-            <h2 className="headline-lg mb-4">Building Excellence</h2>
+            <h2 className="headline-lg mb-4">Build It Right</h2>
             <p className="body-md max-w-3xl">
-              Our construction services deliver quality results through careful
-              planning, skilled execution, and transparent communication. We
-              bring the same attention to detail that defines our environmental
-              work to every construction project.
+              Construction management, renovation, and demolition — with integrated environmental capability when you need it. One contractor. One contract. No coordination headaches.
             </p>
           </div>
 
@@ -140,7 +138,7 @@ export default function SolutionsPage() {
                   {service.description}
                 </p>
                 <span className="text-[var(--primary-blue)] font-medium group-hover:text-[var(--accent-blue)] transition-colors">
-                  Learn More →
+                  {service.linkText}
                 </span>
               </Link>
             ))}
@@ -153,15 +151,22 @@ export default function SolutionsPage() {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="headline-md text-white mb-4">
-              Need a Custom Solution?
+              Not Sure What You Need? Call Us.
             </h2>
             <p className="text-lg text-white/80 mb-8">
-              Every project is unique. Let&apos;s discuss how we can tailor our
-              capabilities to meet your specific requirements.
+              We&apos;ll walk you through it. Free estimates. No obligation.
             </p>
-            <Link href="/contact" className="btn btn-white">
-              Contact Our Team
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn btn-white">
+                Get a Free Estimate
+              </Link>
+              <a
+                href="tel:+1-212-202-0699"
+                className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]"
+              >
+                Call (212) 202-0699
+              </a>
+            </div>
           </div>
         </div>
       </section>

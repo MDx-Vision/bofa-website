@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     template: "%s | BOFA",
   },
   description:
-    "BOFA delivers comprehensive environmental remediation and construction services for government, commercial, and residential clients nationwide. EPA certified, OSHA compliant.",
+    "BOFA — Minority-owned environmental remediation and general contracting. Asbestos, lead, mold removal. EPA-certified. Serving NYC and the tri-state area. Free estimates.",
   keywords: [
     "environmental remediation",
     "asbestos abatement",
@@ -25,21 +25,27 @@ export const metadata: Metadata = {
     "hazardous material removal",
     "general contracting",
     "construction management",
+    "MWBE certified",
+    "minority owned contractor",
+    "NYC DOB",
+    "government contracting",
+    "residential remediation",
+    "EPA certified contractor NYC",
   ],
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://bofaire.com",
     siteName: "BOFA",
-    title: "BOFA | Breath of Fresh Aire",
+    title: "BOFA | Minority-Owned Environmental Remediation & Contracting",
     description:
-      "Comprehensive environmental remediation and construction services for government, commercial, and residential clients nationwide.",
+      "MWBE-certified environmental remediation and general contracting. Asbestos, lead, mold. Serving NYC and the tri-state area. Free estimates.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "BOFA | Breath of Fresh Aire",
+    title: "BOFA | Minority-Owned Environmental Remediation & Contracting",
     description:
-      "Comprehensive environmental remediation and construction services nationwide.",
+      "MWBE-certified. EPA-certified. Asbestos, lead, mold removal. NYC & tri-state area. Free estimates.",
   },
   robots: {
     index: true,

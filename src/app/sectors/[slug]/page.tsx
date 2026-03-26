@@ -136,7 +136,7 @@ export default async function SectorPage({ params }: PageProps) {
             </div>
             <div className="mt-8">
               <Link href="/solutions" className="btn btn-secondary">
-                Explore All Solutions
+                See All Services
               </Link>
             </div>
           </div>
@@ -176,15 +176,22 @@ export default async function SectorPage({ params }: PageProps) {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="headline-md text-white mb-4">
-              Let&apos;s Discuss Your {sector.title} Project
+              Have a {sector.title} Project?
             </h2>
             <p className="text-lg text-white/80 mb-8">
-              We understand the unique requirements of {sector.title.toLowerCase()}{" "}
-              projects. Let&apos;s talk about how we can help.
+              Free estimates. Licensed and insured. We respond within one business day.
             </p>
-            <Link href="/contact" className="btn btn-white">
-              Contact Us
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn btn-white">
+                Get a Free Estimate
+              </Link>
+              <a
+                href="tel:+1-212-202-0699"
+                className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]"
+              >
+                Call (212) 202-0699
+              </a>
+            </div>
           </div>
         </div>
       </section>

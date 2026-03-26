@@ -60,7 +60,7 @@ export default async function SolutionPage({ params }: PageProps) {
                   d="M15 19l-7-7 7-7"
                 />
               </svg>
-              All Solutions
+              All Services
             </Link>
             <h1 className="headline-xl mb-6">{solution.title}</h1>
             <p className="body-lg">{solution.heroDescription}</p>
@@ -158,18 +158,17 @@ export default async function SolutionPage({ params }: PageProps) {
         <div className="container">
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="headline-md text-white mb-4">
-              Discuss Your Project
+              Need {solution.title}?
             </h2>
             <p className="text-lg text-white/80 mb-8">
-              Ready to learn how our {solution.title.toLowerCase()} services can
-              address your needs? Let&apos;s start a conversation.
+              Free estimates. Licensed and insured. We respond within one business day.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn btn-white">
-                Contact Us
+                Get a Free Estimate
               </Link>
               <Link href="/projects" className="btn border-2 border-white text-white hover:bg-white hover:text-[var(--primary-blue)]">
-                View Related Projects
+                See Our Track Record
               </Link>
             </div>
           </div>
